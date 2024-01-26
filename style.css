@@ -10,78 +10,46 @@ body {
     height: 100%;
 }
 
-header{
-    border: 2px solid blue;
+.mother{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1.7fr .3fr;
+    grid-template-areas: 
+    "header header header"
+    "first-aside main second-aside"
+    "first-aside footer footer";
+}
+
+header, .first-aside, main, .second-aside, footer{
+    border: 2px solid;
     border-radius: 1rem;
-    width: 100%;
-    height: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: blue;
-    position: fixed;
+}
+
+header{
+    border-color: blue;
+    grid-area: header;
 }
 
 .first-aside{
-    border: 2px solid black;
-    border-radius: 1rem;
-    width: 30%;
-    height: 75%;
-    position: relative;
-    top: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    grid-area: first-aside;
 }
 
 main{
-    border: 2px solid orange;
-    border-radius: 1rem;
-    height: 55%;
-    width: 35%;
-    position: relative;
-    bottom: 50%;
-    left: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: orange;
+    border-color: orange;
+    grid-area: main;
 }
 
 .second-aside{
-    border: 2px solid red;
-    border-radius: 1rem;
-    width: 35%;
-    height: 55%;
-    position: relative;
-    bottom: 105%;
-    left: 65%;
-    color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-color: red;
+    grid-area: second-aside;
 }
 
 footer{
-    border: 2px solid greenyellow;
-    border-radius: 1rem;
-    width: 70%;
-    height: 20%;
-    position: relative;
-    bottom: 105%;
-    left: 30%;
-    color: greenyellow;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.help{
-    border: 2px solid burlywood;
-    padding: 2.5rem;
-    border-radius: 50%;
-    position: sticky;
-    bottom: 77%;
-    display: inline;
-    left: 92%;
+    border-color: green;
+    grid-area: footer;
 }
